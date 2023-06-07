@@ -24,3 +24,8 @@ steps:
   inputs:
     Contents: '**/.var'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'varfile'
+    publishLocation: 'Container'
